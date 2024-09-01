@@ -5,9 +5,15 @@ use font_kit::loaders::default::Font;
 use pathfinder_geometry::vector::Vector2F;
 
 mod collection;
+
+#[cfg(feature = "harfbuzz")]
 mod hb_layout;
+
+#[cfg(feature = "rustybuzz")]
+mod rb_layout;
+
 mod session;
-mod tables;
+// mod tables;
 mod unicode_funcs;
 
 pub use crate::collection::{FontCollection, FontFamily, FontRef};
